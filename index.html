@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI驱动，自然语言为输入，激发文本转换、图片生成、智能阅读等生产效率。</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <!--<link href="//unpkg.com/layui@2.9.11/dist/css/layui.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- 头部 -->
+<div class="header">
+    <div class="nav-links">
+        <a href="index.html" class="layui-this">首页</a>
+        <a href="#">关于</a>
+        <a href="#">联系</a>
+        <a href="#">帮助</a>
+    </div>
+</div>
+
+<div class="container">
+    <!-- 左侧导航栏 -->
+    <div class="sidebar">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;">文本</a>
+                <dl class="layui-nav-child">
+                    <dd class="layui-this"><a href="content_convert.html" target="content-frame">文本转换</a></dd>
+                    <dd><a href="#">文件重命名</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">图片生成</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="#">Chart.js图表</a></dd>
+                    <dd><a href="#">思维导图</a></dd>
+                    <dd><a href="#">人物关系图</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content">
+        <iframe name="content-frame" src="content_convert.html" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+    <p>&copy; 2024 <a>ai-reading.top</a> All rights reserved.</p>
+</div>
+
+<script src="layui/layui.min.js"></script>
+<!--<script src="//unpkg.com/layui@2.9.11/dist/layui.js"></script>-->
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

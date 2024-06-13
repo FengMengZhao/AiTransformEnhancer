@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI驱动，自然语言为输入，激发文本转换生产效率。我是你的AI文本转换朋友，你只要告诉我做什么，我帮你做好，不需要正则表达式，用自然语言求助。</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <!--<link href="//unpkg.com/layui@2.9.11/dist/css/layui.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- 转换规则输入区域 -->
+<div class="transformation">
+    <input type="text" id="transformationRule" class="layui-input" placeholder="用自然语言说出你的要求，交给AI帮你处理（例如：删除空白行）">
+</div>
+
+<div class="editor-container-parent">
+    <!-- 编辑区域 -->
+    <div class="editor-container">
+        <!-- 左侧输入区域 -->
+        <div class="editor">
+            <textarea id="inputArea" placeholder="输入..."></textarea>
+        </div>
+
+        <!-- 按钮区域 -->
+        <div class="buttons">
+            <!-- copy button -->
+            <button id="copyButton" class="layui-btn layui-btn-primary layui-icon layui-icon-file" title="复制输出"></button>
+            <button id="processButton" class="layui-btn layui-btn-normal layui-icon layui-icon-transfer" title="转换"></button>
+            <button id="swapButton" class="layui-btn layui-btn-primary layui-icon layui-icon-return" title="切换"></button>
+	    <button id="clearButton" class="layui-btn layui-btn-danger layui-icon layui-icon-delete" title="清除输入"></button>
+        </div>
+        
+
+        <!-- 右侧输出区域 -->
+        <div class="editor">
+            <textarea id="outputArea" readonly placeholder="输出..."></textarea>
+        </div>
+    </div>
+</div>
+
+<!--<script src="layui/layui.min.js"></script>-->
+<script src="//unpkg.com/layui@2.9.11/dist/layui.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
