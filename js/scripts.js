@@ -15,7 +15,26 @@ layui.use('element', function(){
 });
 
 var ruleInput = document.getElementById('transformationRule');
-var textInput  = document.getElementById('inputArea')
+var textInput = document.getElementById('inputArea')
+
+// 按下Enter键时触发processButton点击事件
+if(ruleInput){
+    ruleInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // 防止默认的Enter键行为
+            if (!processButton.disabled) {
+                processButton.click();
+            }
+        }
+    });
+}
+
+var searchButton = document.getElementById('searchButton');
+if (searchButton) {
+    searchButton.addEventListener('click', function() {
+        processButton.click();
+    });
+}
 
 var processButton = document.getElementById('processButton');
 if (processButton) {
@@ -40,7 +59,11 @@ if (processButton) {
             ifRule = true
         } 
         if (inputText === '') {
-            ruleErrorTextContent += '，输入不能为空';
+            // ruleErrorTextContent not empty
+            if(ruleErrorTextContent.trim() !== ''){
+                ruleErrorTextContent += ', ';
+            }
+            ruleErrorTextContent += '输入不能为空';
             ifInput = true
         }
 
@@ -62,7 +85,12 @@ if (processButton) {
         }
         
 
-        // 校验通过，继续处理逻辑
+        // 校验通过，禁用输入框和按钮
+        ruleInput.disabled = true;
+        textInput.disabled = true;
+        processButton.disabled = true;
+        searchButton.disabled = true;
+        //继续处理
         document.getElementById('outputArea').value = '转换中，请稍等...';
 
         // 保存原始图标
@@ -79,7 +107,13 @@ if (processButton) {
                 // 恢复原始图标和按钮状态
                 processButton.innerHTML = originalIcon;
                 processButton.classList.remove('button-disabled');
-	        processButton.classList.add('layui-icon-transfer');
+	            processButton.classList.add('layui-icon-transfer');
+
+                // 重新启用输入框和按钮
+                ruleInput.disabled = false;
+                textInput.disabled = false;
+                processButton.disabled = false;
+                searchButton.disabled = false;
             });
     });
 }
@@ -107,6 +141,9 @@ if (swapButton) {
     swapButton.addEventListener('click', function() {
         //const input = document.getElementById('inputArea').value;
         const output = document.getElementById('outputArea').value;
+        if(output === ''){ 
+            return;
+        }
         document.getElementById('inputArea').value = output;
         document.getElementById('outputArea').value = '';
     });
@@ -172,6 +209,7 @@ function processText(text, rule) {
             var layer = layui.layer;
             layer.msg(error.message, {icon: 2, offset: 'rt'});
         });
+        document.getElementById('outputArea').value = '';
     });
 }
 

@@ -85,10 +85,12 @@ body {
     padding: 10px;
     /*background-color: lightblue;*/
     height: 5%;
+    
 }
 
 .transformation .layui-input {
     border: 1px solid; /* 调整输入框边框宽度 */
+    width: calc(100% - 55px);
 }
 
 .editor-container {
@@ -145,4 +147,10 @@ body {
 .button-disabled {
     pointer-events: none;
     opacity: 0.6;
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
