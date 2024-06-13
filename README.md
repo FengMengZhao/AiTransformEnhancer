@@ -10,32 +10,36 @@
 
 > 项目开发中，上线部分功能
 
-## 使用示例
+## 使用示例(规则只是示例，有什么要处理的像向朋友请教那样提问)
 
 ### 1. 正则匹配
 
-输入规则：配所有电子邮件地址 
+规则：`配所有电子邮件地址`
 
-输入文本：请联系test@example.com或support@domain.com获取更多信息。
+输入：`请联系test@example.com或support@domain.com获取更多信息。`
 
-输出：test@example.com, support@domain.com（输出作为新一轮的输入，后续相同）
+输出：`test@example.com, support@domain.com（输出作为新一轮的输入，后续相同）`
 
-输入规则：以, 为分隔符分行展示
+---
 
-输出：
-
-```
-test@example.com
-support@domain.com
-```
-
-输入规则：复制第一行5遍
+规则：`, 为分隔符分行展示`
 
 输出：
 
 ```
 test@example.com
 support@domain.com
+```
+
+---
+
+规则：`制第一行5遍`
+
+输出：
+
+```
+test@example.com
+support@domain.com
 test@example.com
 support@domain.com
 test@example.com
@@ -46,7 +50,9 @@ test@example.com
 support@domain.com
 ```
 
-输入规则：行首加序号
+---
+
+规则：`首加序号`
 
 输出：
 
@@ -63,7 +69,9 @@ support@domain.com
 10. support@domain.com
 ```
 
-输入规则：以用户名@domain.com的形式，匹配所有的用户名加上“_xxxx”
+---
+
+规则：`用户名@domain.com的形式，匹配所有的用户名加上“_xxxx”`
 
 输出：
 
@@ -80,7 +88,9 @@ support@domain.com
 10. support_xxxx@domain.com
 ```
 
-输入：删除所有的序号.
+---
+
+规则：`除所有的序号.`
 
 输出：
 
@@ -97,14 +107,22 @@ test@example.com
 support@domain.com
 ```
 
-输入：删除重复行
+---
+
+规则：`除重复行`
+
+输出：
 
 ```
 test@example.com
 support@domain.com
 ```
 
-输入：以ASCII将行排序
+---
+
+规则：`ASCII将行排序`
+
+输出：
 
 ```
 support@domain.com
@@ -119,7 +137,7 @@ test@example.com
 test test@example.com 中国 130xxxxxxx
 support support@domain.com 中国 130xxxxxxx
 ```
-规则：表为user，字段为name email address phoneNum，以每行数据空格为分隔符，生成insert语句
+规则：`为user，字段为name email address phoneNum，以每行数据空格为分隔符，生成insert语句`
 
 输出：
 
@@ -138,7 +156,7 @@ test test@example.com 中国 130xxxxxxx
 support support@domain.com 中国 130xxxxxxx
 ```
 
-规则：第一行作为表头，以空格为分隔符，转换为markdown格式表格
+规则：`一行作为表头，以空格为分隔符，转换为markdown格式表格`
 
 输出：
 
@@ -149,5 +167,4 @@ support support@domain.com 中国 130xxxxxxx
 |support|support@domain.com|中国|130xxxxxxx|
 ```
 
-...
-
+**更多有群的玩法，访问[Ai-Exchange](https://www.ai-reading.me)体验**
