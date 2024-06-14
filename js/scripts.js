@@ -171,6 +171,14 @@ if (clearButton) {
     });
 }
 
+var githubButton =  document.getElementById('githubButton');
+if(githubButton){
+    githubButton.addEventListener('click', function() {
+        //新的标签页打开地址
+        window.open('https://github.com/FengMengZhao/Ai-Exchange', '_blank');
+    })
+}
+
 function processText(text, rule) {
     // send a fetch request to the server
     return fetch('/api/txt_transform/content_convert', {

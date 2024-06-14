@@ -57,6 +57,7 @@ body {
     background-color: cadetblue;
     padding: 0;
     box-sizing: border-box;
+    margin-top: 10px;
 }
 
 .sidebar ul {
@@ -84,13 +85,14 @@ body {
     text-align: center;
     padding: 10px;
     /*background-color: lightblue;*/
-    height: 5%;
+    height: calc(8% - 20px);
     
 }
 
 .transformation .layui-input {
     border: 1px solid; /* 调整输入框边框宽度 */
     width: calc(100% - 55px);
+    /*height: calc(100% + 14px)*/ /* 动态高度可以设置，但是会和icon高度不一致 */
 }
 
 .editor-container {
@@ -103,7 +105,8 @@ body {
 
 .editor {
     flex: 1;
-    padding: 10px;
+    /*padding: 10px; */
+    padding: 10px 10px 0 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -141,7 +144,7 @@ body {
 
 .editor-container-parent {
     display: flex;
-    height: 90%;
+    height: 92%;
 }
 
 .button-disabled {
