@@ -179,6 +179,37 @@ if(githubButton){
     })
 }
 
+
+let issoLoaded = false;
+var commentButton = document.getElementById('commentButton');
+
+if(commentButton){
+commentButton.addEventListener('click', function() {
+	const commentSection = parent.document.getElementById('comment');
+
+	if(commentSection) {
+		if (commentSection.style.display === 'none' || commentSection.style.display === '') {
+		    // 显示评论区域
+		    commentSection.style.display = 'block';
+
+		    // 动态加载 Isso 脚本（只加载一次）
+		    if (!issoLoaded) {
+			var issoScript = parent.document.createElement('script');
+			issoScript.src = "//comment.ai-reading.me/js/embed.min.js";
+			issoScript.dataset.isso = "//comment.ai-reading.me";
+			parent.document.body.appendChild(issoScript);
+			issoLoaded = true;
+		    }
+		} else {
+		    // 隐藏评论区域
+		    commentSection.style.display = 'none';
+		}
+	}
+	});
+}
+
+
+
 function processText(text, rule) {
     // send a fetch request to the server
     return fetch('/api/txt_transform/content_convert', {
@@ -220,4 +251,5 @@ function processText(text, rule) {
         document.getElementById('outputArea').value = '';
     });
 }
+
 

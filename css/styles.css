@@ -49,7 +49,8 @@ body {
 .container {
     display: flex;
     height: calc(100% - 115px); /* Subtract header and footer height */
-    padding: 0 20px; /* 设置左右边距 */
+    /*padding: 0 20px; *//* 设置左右边距 */
+    padding: 0;
 }
 
 .sidebar {
@@ -156,4 +157,17 @@ body {
     position: absolute;
     right: 10px;
     top: 10px;
+}
+
+
+#comment {
+    display: none;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#isso-thread {
+    margin-top: 20px;
 }
