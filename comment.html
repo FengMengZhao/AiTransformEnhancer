@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.min.css">
+    <!--<link href="//unpkg.com/layui@2.9.11/dist/css/layui.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            /*background-color: #16baaa;*/
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #16baaa;
+            margin-bottom: 20px;
+        }
+        .comment-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .comment-section h2 {
+            color: #16baaa;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>留言板</h1>
+        <p>欢迎在此留下您的宝贵意见和建议。</p>
+        <div class="comment-section">
+            <!-- 留出地方引入第三方留言系统 -->
+            <div id="comment">
+                <section id="isso-thread"></section>
+            </div>
+        </div>
+    </div>
+
+    <script src="layui/layui.min.js"></script>
+    <!--<script src="//unpkg.com/layui@2.9.11/dist/layui.js"></script>-->
+    <script src="js/scripts.js"></script>
+    <script data-isso='{"requireAuthor":true, "requireEmail":true, "requireWebsite":false, "replyNotifications":true, "maxCommentsTop":5, "maxCommentsNested":5, "avatar":"mp"}' src="https://comment.ai-reading.me/js/embed.min.js"></script>
+
+</body>
+</html>

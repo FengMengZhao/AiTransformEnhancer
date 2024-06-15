@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麦秀的简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.min.css">
+    <!--<link href="//unpkg.com/layui@2.9.11/dist/css/layui.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            /*background-color: #16baaa;*/
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            color: #16baaa;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #16baaa;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact-info, .education, .skills, .experience, .projects {
+            margin-bottom: 20px;
+        }
+        .contact-info p, .education p, .skills p, .experience p, .projects p {
+            margin: 5px 0;
+        }
+        .project {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .project h3 {
+            margin-top: 0;
+        }
+        .project ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .project ul li {
+            margin-bottom: 5px;
+        }
+        .skills p, .experience ul {
+            margin-left: 20px;
+        }
+        .experience ul {
+            list-style-type: square;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+        }
+        .header p {
+            font-size: 1.2em;
+        }
+        .icon {
+            margin-right: 5px;
+        }
+        .inline {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+        }
+        .inline p {
+            margin: 5px 0;
+        }
+        .blurred {
+            filter: blur(5px);
+        }
+        .code-block {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-right: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>麦秀（高级研发工程师）</h1>
+        </div>
+        <div class="contact-info">
+            <div class="inline">
+                <p><i class="fas fa-male icon"></i>性别：*</p>
+                <p><i class="fas fa-birthday-cake icon"></i>出生日期：****.**</p>
+                <p><i class="fas fa-map-marker-alt icon"></i>所在地：**</p>
+                <p><i class="fas fa-user-tie icon"></i>政治面貌：****</p>
+            </div>
+            <div class="inline">
+                <p><i class="fas fa-globe icon"></i>个人网站：<a href="https://www.ai-reading.me" target="_blank">https://www.ai-reading.me</a></p>
+                <p><i class="fas fa-phone icon"></i>电话：***********</p>
+                <p><i class="fas fa-envelope icon"></i>邮箱：<a href="mailto:fengmengzhao@gmail.com">fengmengzhao@gmail.com</a></p>
+                <p><i class="fab fa-github icon"></i>GitHub：<a href="https://github.com/FengMengZhao" target="_blank">https://github.com/FengMengZhao</a></p>
+            </div>
+        </div>
+        <div class="education">
+            <h2>教育背景</h2>
+            <div class="inline">
+                <p><i class="fas fa-university icon"></i>西南**大学（统招-211） - 硕士 - ***</p>
+                <p>2014.09 - 2017.06</p>
+            </div>
+            <div class="inline">
+                <p><i class="fas fa-university icon"></i>**科技大学（统招-普本） - 学士 - ***</p>
+                <p>2010.09 - 2014.06</p>
+            </div>
+        </div>
+        <div class="skills">
+            <h2>专业技能</h2>
+            <div class="inline">
+                <p><i class="fas fa-laptop-code icon"></i>计算机基础：熟悉计算机网络、操作系统、数据结构和算法。</p>
+                <p><i class="fab fa-java icon"></i>Java：Java基础扎实；掌握JVM调优、多线程编程、函数式编程。框架：熟练掌握Spring家族、ORM框架使用及原理。</p>
+                <p><i class="fas fa-database icon"></i>数据库：掌握数据库设计、数据库优化（SQL优化、DB优化、架构优化）、连接池使用和调优、数据迁移。</p>
+                <p><i class="fas fa-pencil-ruler icon"></i>设计：掌握设计模式，具备业务抽象能力。</p>
+            </div>
+            <div class="inline">
+                <p><i class="fab fa-linux icon"></i>Linux：熟悉Linux操作系统、Shell编程；掌握Linux部署应用异常分析、性能问题排查；掌握Shell文本处理。</p>
+                <p><i class="fab fa-js icon"></i>前端：掌握JavaScript前端开发；熟悉HTML、CSS。</p>
+                <p><i class="fas fa-tools icon"></i>工具：掌握Nginx代理配置；熟悉Docker容器技术及使用。</p>
+                <p><i class="fas fa-shield-alt icon"></i>信创：熟悉国产信创软件，掌握信创适配问题解决。</p>
+                <p><i class="fas fa-robot icon"></i>AI: 熟悉最新AI技术、API调用；熟练利用AI辅助做设计、写代码。</p>
+            </div>
+        </div>
+        <div class="experience">
+            <h2>工作经历</h2>
+            <h3>*****技术有限公司 - 研发中心 - 高级研发工程师</h3>
+            <p>2017.07 - *****</p>
+            <ul>
+                <li>架构设计技术选型、总体模块概要设计、核心模块详细设计、接口设计、数据库设计、特定问题技术方案设计</li>
+                <li>基础公用模块开发、新项目框架开发、核心难点模块开发、适配开发（对接/数据/信创）</li>
+                <li>线上疑难bug排查、团队技术难点预研攻关、性能问题排查</li>
+                <li>团队内技术分工与协作、估算研发工时和项目成本、管控研发交付进度</li>
+                <li>现场部署实施、Nginx代理、系统迁移、网络改造适配</li>
+            </ul>
+        </div>
+        <div class="projects">
+            <h2>项目</h2>
+            <div class="project">
+                <h3>AI Exchange</h3>
+                <p><strong>技术栈：</strong>
+                    <span class="code-block">AI chatgpt</span>
+                    <span class="code-block">HTTPS</span>
+                    <span class="code-block">Nginx</span>
+                    <span class="code-block">多线程</span>
+                    <span class="code-block">跨域</span>
+                    <span class="code-block">反向代理</span>
+                    <span class="code-block">Regex</span>
+                    <span class="code-block">GarrlVM</span>
+                    <span class="code-block">js</span>
+                    <span class="code-block">python</span>
+                    <span class="code-block">springboot</span>
+                    <span class="code-block">mybatis-plus</span>
+                    <span class="code-block">layui</span>
+                </p>
+                <p><strong>项目概述：</strong>AI驱动，自然语言为输入，激发文本转换、图片生成、智能阅读等生产效率。</p>
+                <p><strong>负责内容：</strong></p>
+                <ul>
+                    <li>后端任务多线程设计（支持延迟、重试、排队等）</li>
+                    <li>AI接口调用、容错处理、渠道切换</li>
+                    <li>沙盒运行安全实现（调用时间、输出长度、资源访问）</li>
+                    <li>前端页面设计开发</li>
+                </ul>
+            </div>
+            <div class="project">
+                <h3>*****</h3>
+                <p><strong>技术栈：</strong>
+                    <span class="code-block">多线程</span>
+                    <span class="code-block">HTTPS</span>
+                    <span class="code-block">签章互信</span>
+                    <span class="code-block">Gson</span>
+                    <span class="code-block">跨域</span>
+                    <span class="code-block">RocksDB</span>
+                    <span class="code-block">Minion</span>
+                    <span class="code-block">Nginx</span>
+                    <span class="code-block">SM4</span>
+                    <span class="code-block">人大金仓</span>
+                    <span class="code-block">SSO</span>
+                </p>
+                <p><strong>项目概述：</strong>实现广州市、区政法单位案件跨部门网上协同办理。</p>
+                <p><strong>负责内容：</strong></p>
+                <ul>
+                    <li>总体应用部署及网络交换方案设计</li>
+                    <li>**分平台打包服务设计和开发</li>
+                    <li>交换子系统设计和开发</li>
+                    <li>数据包平台流转**</li>
+                    <li>**子系统设计和开发</li>
+                </ul>
+            </div>
+            <div class="project">
+                <h3>*****</h3>
+                <p><strong>技术栈：</strong>
+                    <span class="code-block">设计模式</span>
+                    <span class="code-block">性能优化</span>
+                    <span class="code-block">接口设计</span>
+                    <span class="code-block">缓存</span>
+                </p>
+                <p><strong>项目概述：</strong>基于****数据统计分析系统，展示并预警业务指标，辅助***和决策。</p>
+                <p><strong>负责内容：</strong></p>
+                <ul>
+                    <li>项目基础架构搭建</li>
+                    <li>通用模块设计（针对统计图）</li>
+                    <li>**统计分析及数据库设计</li>
+                    <li>达梦国产数据库适配改造</li>
+                    <li>性能优化</li>
+                </ul>
+            </div>
+            <div class="project">
+                <h3>*****</h3>
+                <p><strong>技术栈：</strong>
+                    <span class="code-block">多线程</span>
+                    <span class="code-block">日志可视化</span>
+                </p>
+                <p><strong>项目概述：</strong>实现结构化、半结构数据的采集、处理和导入。支持多线程大规模数据的批处理，支持SQL执行、运行时脚本、SSH采集等多组件。</p>
+                <p><strong>负责内容：</strong></p>
+                <ul>
+                    <li>后端采集任务框架搭建</li>
+                    <li>后端数据库设计</li>
+                    <li>数据处理核心模块设计和开发</li>
+                    <li>多数据源适配方案设计及实现</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

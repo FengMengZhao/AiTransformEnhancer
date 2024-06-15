@@ -2,10 +2,12 @@ layui.use('element', function(){
     var element = layui.element;
 
     // 默认选中导航中的“首页”
+    /*
     var navLinks = document.querySelector('.nav-links a');
     if (navLinks) {
         navLinks.classList.add('layui-this');
     }
+    */
 
     // 默认展开侧边栏中的“文本转换”
     var navItem = document.querySelector('.layui-nav-itemed');
@@ -35,6 +37,24 @@ if (searchButton) {
         processButton.click();
     });
 }
+
+
+var homeLink = document.getElementById('home-link');
+var aboutLink = document.getElementById('about-link');
+if(homeLink && aboutLink){
+    homeLink.addEventListener('click', function() {
+        homeLink.classList.add('layui-this');
+        aboutLink.classList.remove('layui-this');
+    });
+
+    aboutLink.addEventListener('click', function() {
+        aboutLink.classList.add('layui-this');
+        homeLink.classList.remove('layui-this');
+    });
+}
+
+
+
 
 var processButton = document.getElementById('processButton');
 if (processButton) {
