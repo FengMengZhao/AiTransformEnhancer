@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AI增强，自然语言实现文本转化，了解作者</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -20,11 +21,13 @@
         <a href="/" id="home-link">首页</a>
         <a href="about.html" id="about-link" class="layui-this">关于</a>
     </div>
+    <button class="layui-btn layui-btn-primary layui-icon layui-icon-shrink-right toggle-navbar-btn" id="toggle-navbar-btn"></button>
+    <button class="layui-btn layui-btn-primary layui-icon layui-icon-spread-left toggle-sidebar-btn" id="toggle-sidebar-btn"></button>
 </div>
 
 <div class="container">
     <!-- 左侧导航栏 -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
             <li class="layui-nav-item layui-this">
                 <a href="resume.html" target="content-frame">简历</a>

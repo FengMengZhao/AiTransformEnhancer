@@ -171,3 +171,129 @@ body {
 #isso-thread {
     margin-top: 20px;
 }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header .nav-links {
+        display: none;
+    }
+
+    .toggle-navbar-btn {
+        display: block;
+        position: absolute;
+        right: 20px; /* 调整按钮与右侧的距离 */
+        top: 15px; /* 调整按钮与顶部的距离 */
+    }
+
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 58px; /* 调整为header的高度 */
+        right: 0;
+        width: 100px; /* 设置导航栏宽度 */
+        background-color: white;
+        z-index: 1000;
+        padding: 10px 0;
+        box-shadow: -2px 0 5px rgba(26, 22, 22, 0.1); /* 添加阴影效果 */
+        transition: transform 0.3s ease; /* 添加滑动动画 */
+        transform: translateX(100%); /* 初始状态在屏幕外 */
+    }
+
+    .nav-links.show.show-nav {
+        transform: translateX(0); /* 显示状态滑入屏幕 */
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .toggle-sidebar-btn {
+        display: block;
+    }
+
+    .layui-nav.layui-nav-tree {
+        width: 100px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 58px; /* Adjust according to the header height */
+        left: 0;
+        width: 100px;
+        height: calc(100% - 55px); /* Adjust according to the header height */
+        transform: translateX(-100%);
+        z-index: 1000;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .content {
+        flex: none;
+        height: 100%;
+    }
+
+    /* content_convert样式 */
+    .editor-container-parent {
+        height: 89%;
+    }
+    .editor-container {
+        flex-direction: column; /* 切换为纵向排列 */
+        height: auto; /* 高度自动调整 */
+    }
+
+    .editor {
+        height: auto; /* 高度自动调整 */
+    }
+
+    .buttons {
+        flex-direction: row; /* 按钮横向排列 */
+        justify-content: space-evenly;
+        gap: 5px;
+        padding: 10px 0; /* 增加内边距 */
+    }
+
+    .buttons .layui-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .transformation {
+        height: auto; /* 高度自动调整 */
+        
+    }
+
+    .transformation .layui-input {
+        width: calc(100% - 55px); /* 调整输入框宽度 */
+    }
+
+    .search-button {
+        /*position: static;*/ /* 重置按钮位置 */
+        margin-left: 10px; /* 增加左边距 */
+    }
+
+}
+
+@media (min-width: 769px) {
+    .toggle-sidebar-btn {
+        display: none;
+    }
+    .toggle-navbar-btn {
+        display: none;
+    }
+}

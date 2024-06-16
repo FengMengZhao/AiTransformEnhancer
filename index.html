@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AI驱动，自然语言为输入，激发文本转换、图片生成、智能阅读等生产效率。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -20,29 +21,20 @@
         <a href="/" class="layui-this">首页</a>
         <a href="about.html">关于</a>
     </div>
+    <button class="layui-btn layui-btn-primary layui-icon layui-icon-shrink-right toggle-navbar-btn" id="toggle-navbar-btn"></button>
+    <button class="layui-btn layui-btn-primary layui-icon layui-icon-spread-left toggle-sidebar-btn" id="toggle-sidebar-btn"></button>
 </div>
 
 <div class="container">
     <!-- 左侧导航栏 -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
             <li class="layui-nav-item layui-nav-itemed">
                 <a href="javascript:;">文本</a>
                 <dl class="layui-nav-child">
                     <dd class="layui-this"><a href="content_convert.html" target="content-frame">文本转换</a></dd>
-		    <!--<dd><a href="#">文件重命名</a></dd>-->
                 </dl>
             </li>
-	    <!--
-            <li class="layui-nav-item">
-                <a href="javascript:;">图片生成</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="#">Chart.js图表</a></dd>
-                    <dd><a href="#">思维导图</a></dd>
-                    <dd><a href="#">人物关系图</a></dd>
-                </dl>
-            </li>
-	    -->
         </ul>
     </div>
 
@@ -53,13 +45,15 @@
 </div>
 
 <div id="comment">
-	<section id="isso-thread"></section>
+    <section id="isso-thread"></section>
 </div>
 
 <!-- 页脚 -->
+ <!--
 <div class="footer">
     <p>&copy; 2024 <a href="https://www.ai-reading.me">www.ai-reading.me</a> All rights reserved.</p>
 </div>
+-->
 
 <script src="layui/layui.min.js"></script>
 <!--<script src="//unpkg.com/layui@2.9.11/dist/layui.js"></script>-->
@@ -67,4 +61,3 @@
 
 </body>
 </html>
-

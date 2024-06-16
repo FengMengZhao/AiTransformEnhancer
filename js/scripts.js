@@ -16,8 +16,18 @@ layui.use('element', function(){
     }
 });
 
+// 获取元素
+var toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
+var sidebar = document.getElementById('sidebar');
+
+if (toggleSidebarBtn) {
+    toggleSidebarBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('show');
+    });
+}
+
 var ruleInput = document.getElementById('transformationRule');
-var textInput = document.getElementById('inputArea')
+var textInput = document.getElementById('inputArea');
 
 // 按下Enter键时触发processButton点击事件
 if(ruleInput){
@@ -38,7 +48,6 @@ if (searchButton) {
     });
 }
 
-
 var homeLink = document.getElementById('home-link');
 var aboutLink = document.getElementById('about-link');
 if(homeLink && aboutLink){
@@ -53,18 +62,15 @@ if(homeLink && aboutLink){
     });
 }
 
-
-
-
 var processButton = document.getElementById('processButton');
 if (processButton) {
     processButton.addEventListener('click', function() { 
         var ruleValue = ruleInput.value.trim();
         var inputText = textInput.value.trim();
         // 是否违背规则校验
-        var ifRule = false
+        var ifRule = false;
         // 是否违背输入校验
-        var ifInput = false
+        var ifInput = false;
 
         // 重置错误消息
         ruleErrorTextContent = '';
@@ -73,10 +79,10 @@ if (processButton) {
         // 校验规则输入框
         if(ruleValue === '') {
             ruleErrorTextContent = '规则不能为空';
-            ifRule = true
+            ifRule = true;
         }else if(ruleValue.length > 50){
             ruleErrorTextContent = '规则不能超过50个字';
-            ifRule = true
+            ifRule = true;
         } 
         if (inputText === '') {
             // ruleErrorTextContent not empty
@@ -84,7 +90,7 @@ if (processButton) {
                 ruleErrorTextContent += ', ';
             }
             ruleErrorTextContent += '输入不能为空';
-            ifInput = true
+            ifInput = true;
         }
 
         if (ruleErrorTextContent) {
@@ -127,7 +133,7 @@ if (processButton) {
                 // 恢复原始图标和按钮状态
                 processButton.innerHTML = originalIcon;
                 processButton.classList.remove('button-disabled');
-	            processButton.classList.add('layui-icon-transfer');
+                processButton.classList.add('layui-icon-transfer');
 
                 // 重新启用输入框和按钮
                 ruleInput.disabled = false;
@@ -144,7 +150,6 @@ if(ruleInput){
             ruleInput.style.borderColor = ''; // 恢复默认边框颜色
         }
     });
-
 }
 
 if(textInput){
@@ -154,7 +159,6 @@ if(textInput){
         }
     });
 }
-
 
 var swapButton = document.getElementById('swapButton');
 if (swapButton) {
@@ -167,7 +171,6 @@ if (swapButton) {
         document.getElementById('inputArea').value = output;
         document.getElementById('outputArea').value = '';
     });
-
 }
 
 var copyButton = document.getElementById('copyButton');
@@ -196,7 +199,20 @@ if(githubButton){
     githubButton.addEventListener('click', function() {
         //新的标签页打开地址
         window.open('https://github.com/FengMengZhao/Ai-Exchange', '_blank');
-    })
+    });
+}
+
+// 获取元素
+var toggleNavbarBtn = document.getElementById('toggle-navbar-btn');
+var navLinks = document.querySelector('.nav-links');
+
+if (toggleNavbarBtn) {
+    toggleNavbarBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+        setTimeout(() => {
+            navLinks.classList.toggle('show-nav');
+        }, 10); // 添加一个小延迟，以确保动画效果
+    });
 }
 
 
@@ -227,8 +243,6 @@ commentButton.addEventListener('click', function() {
 	}
 	});
 }
-
-
 
 function processText(text, rule) {
     // send a fetch request to the server
