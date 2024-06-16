@@ -10,6 +10,16 @@
 
 > 项目开发中，上线部分功能
 
+## 录屏展示
+
+### 文本处理
+
+![ai-exchange-录屏](image/ai-exchange.gif)
+
+### sql生成
+
+![ai-exchange-录屏](image/ai-exchange-2.gif)
+
 ## 使用示例(规则只是示例，有什么要处理的像向朋友请教那样提问)
 
 ### 1. 正则匹配
