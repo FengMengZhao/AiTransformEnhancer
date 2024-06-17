@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.ai-reading.me/</loc>
+  <lastmod>2024-06-16T04:00:03+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.ai-reading.me/about.html</loc>
+  <lastmod>2024-06-16T03:14:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.ai-reading.me/content_convert.html</loc>
+  <lastmod>2024-06-16T04:00:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.ai-reading.me/resume.html</loc>
+  <lastmod>2024-06-16T03:59:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.ai-reading.me/comment.html</loc>
+  <lastmod>2024-06-16T03:30:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
