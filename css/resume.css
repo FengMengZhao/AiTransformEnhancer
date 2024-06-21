@@ -1,0 +1,92 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    /*background-color: #16baaa;*/
+    color: #333;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+h1, h2, h3 {
+    color: #16baaa;
+    margin-bottom: 10px;
+}
+a {
+    color: #16baaa;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.contact-info, .education, .skills, .experience, .projects {
+    margin-bottom: 20px;
+}
+.contact-info p, .education p, .skills p, .experience p, .projects p {
+    margin: 5px 0;
+}
+.project {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+.project h3 {
+    margin-top: 0;
+}
+.project ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+.project ul li {
+    margin-bottom: 5px;
+}
+.skills p, .experience ul {
+    margin-left: 20px;
+}
+.experience ul {
+    list-style-type: square;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header h1 {
+    font-size: 2.5em;
+}
+.header p {
+    font-size: 1.2em;
+}
+.icon {
+    margin-right: 5px;
+}
+.inline {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+}
+.inline p {
+    margin: 5px 0;
+    text-overflow: ellipsis; /* 溢出时显示省略号 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    white-space: nowrap; /* 禁止换行 */
+}
+.blurred {
+    filter: blur(5px);
+}
+.code-block {
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}

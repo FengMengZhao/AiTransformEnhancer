@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>留言板</title>
+    <title data-translate="title">留言板</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -11,45 +11,15 @@
     <link rel="stylesheet" href="layui/css/layui.min.css">
     <!--<link href="//unpkg.com/layui@2.9.11/dist/css/layui.css" rel="stylesheet">-->
     <!--<link rel="stylesheet" href="css/styles.css">-->
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.4;
-            margin: 0;
-            padding: 0;
-            /*background-color: #16baaa;*/
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-            background: #ffffff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            color: #16baaa;
-            margin-bottom: 20px;
-        }
-        .comment-section {
-            margin-top: 20px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .comment-section h2 {
-            color: #16baaa;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/comment.css">
+    <script src="js/comment-lang.js"></script>
+    <script src="js/comment.js" type="module"></script>
+    <script src="js/common.js" type="module"></script>
 </head>
 <body>
     <div class="container">
-        <h1>留言板</h1>
-        <p>欢迎在此留下您的宝贵意见和建议。</p>
+        <h1 data-translate="comment">留言板</h1>
+        <p data-translate="welcomeMessage">欢迎在此留下您的宝贵意见和建议。</p>
         <div class="comment-section">
             <!-- 留出地方引入第三方留言系统 -->
             <div id="comment">
@@ -60,7 +30,6 @@
 
     <script src="layui/layui.min.js"></script>
     <!--<script src="//unpkg.com/layui@2.9.11/dist/layui.js"></script>-->
-    <script src="js/scripts.js"></script>
     <script src="//comment.ai-reading.me/js/embed.min.js" data-isso="//comment.ai-reading.me"></script>
 </body>
 </html>

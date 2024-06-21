@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    /*background-color: #16baaa;*/
+    color: #333;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+h1 {
+    color: #16baaa;
+    margin-bottom: 20px;
+}
+.comment-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.comment-section h2 {
+    color: #16baaa;
+    margin-bottom: 10px;
+}
+   

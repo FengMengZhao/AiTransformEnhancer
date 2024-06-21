@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>AI增强，自然语言实现文本转化，了解作者</title>
+    <title data-translate="aboutTitle">AI增强，自然语言实现文本转化，了解作者</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="layui/css/layui.min.css">
     <!--<link href="//unpkg.com/layui@2.9.11/dist/css/layui.css" rel="stylesheet">-->
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/lang.js"></script>
 </head>
 <body>
 
 <!-- 头部 -->
 <div class="header">
     <div class="nav-links">
-        <a href="/" id="home-link">首页</a>
-        <a href="about.html" id="about-link" class="layui-this">关于</a>
+        <a href="/" id="home-link" data-translate="home">首页</a>
+        <a href="about.html" id="about-link" class="layui-this" data-translate="about">关于</a>
+        <button id="langSwitch" class="layui-btn layui-btn-primary layui-icon" title="切换" data-translate="langSwitch">中文</button>
     </div>
     <button class="layui-btn layui-btn-primary layui-icon layui-icon-shrink-right toggle-navbar-btn" id="toggle-navbar-btn"></button>
     <button class="layui-btn layui-btn-primary layui-icon layui-icon-spread-left toggle-sidebar-btn" id="toggle-sidebar-btn"></button>
@@ -30,10 +32,10 @@
     <div class="sidebar" id="sidebar">
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
             <li class="layui-nav-item layui-this">
-                <a href="resume.html" target="content-frame">简历</a>
+                <a href="resume.html" target="content-frame" data-translate="resume">简历</a>
             </li>
             <li class="layui-nav-item">
-                <a href="comment.html" target="content-frame">留言板</a>
+                <a href="comment.html" target="content-frame" data-translate="commentBoard">留言板</a>
             </li>
         </ul>
     </div>
@@ -50,7 +52,7 @@
 
 <!-- 页脚 -->
 <div class="footer">
-    <p>&copy; 2024 <a href="https://www.ai-reading.me">www.ai-reading.me</a> All rights reserved.</p>
+    <p>&copy; 2024 <a href="https://www.ai-reading.me">www.ai-reading.me</a> <span data-translate="allRightsReserved">All rights reserved.</span></p>
 </div>
 
 <script src="layui/layui.min.js"></script>

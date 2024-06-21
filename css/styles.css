@@ -6,6 +6,9 @@ html, body {
 body {
     margin: 0;
     color: black;
+
+    font-size: 14px; /* 设置统一的字体大小 */
+    font-family: Arial, sans-serif; /* 设置通用字体 */
 }
 
 .header, .footer {
@@ -15,6 +18,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
     position: relative;
     z-index: 1;
+}
+
+.header {
+    height: 28px;
 }
 
 .header::after, .footer::after {
@@ -172,6 +179,19 @@ body {
     margin-top: 20px;
 }
 
+
+#langSwitch {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    width: 40px; /* 根据需要调整宽度 */
+    height: 40px; /* 根据需要调整高度 */
+    border-radius: 50%; /* 将按钮变为圆形 */
+    padding: 0; /* 移除默认内边距 */
+}
+
+
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .header .nav-links {
@@ -285,6 +305,17 @@ body {
     .search-button {
         /*position: static;*/ /* 重置按钮位置 */
         margin-left: 10px; /* 增加左边距 */
+    }
+
+    #langSwitch {
+        color: black; /* 设置按钮颜色 */
+        font-weight: bold; /* 设置按钮字体加粗 */
+        border: none; /* 移除下划线 */
+
+        position: static; /* 设置相对定位 */
+        width: auto; /* 设置宽度自动 */
+        height: auto; /* 设置高度自动 */
+
     }
 
 }
