@@ -56,34 +56,6 @@ if (toggleNavbarBtn) {
 }
 
 
-let issoLoaded = false;
-var commentButton = document.getElementById('commentButton');
-
-if(commentButton){
-commentButton.addEventListener('click', function() {
-	const commentSection = parent.document.getElementById('comment');
-
-	if(commentSection) {
-		if (commentSection.style.display === 'none' || commentSection.style.display === '') {
-		    // 显示评论区域
-		    commentSection.style.display = 'block';
-
-		    // 动态加载 Isso 脚本（只加载一次）
-		    if (!issoLoaded) {
-			var issoScript = parent.document.createElement('script');
-			issoScript.src = "//comment.ai-reading.me/js/embed.min.js";
-			issoScript.dataset.isso = "//comment.ai-reading.me";
-			parent.document.body.appendChild(issoScript);
-			issoLoaded = true;
-		    }
-		} else {
-		    // 隐藏评论区域
-		    commentSection.style.display = 'none';
-		}
-	}
-	});
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const langSwitchButton = document.getElementById('langSwitch');
     const iframe = document.querySelector('iframe[name="content-frame"]');
