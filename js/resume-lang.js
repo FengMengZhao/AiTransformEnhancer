@@ -93,7 +93,7 @@ const translations = {
         tech29: "Multithreading",
         tech30: "Log Visualization"
     },
-    cn: {
+    zh: {
         title: "麦秀的简历",
         name: "麦秀（高级研发工程师）",
         gender: "性别：",

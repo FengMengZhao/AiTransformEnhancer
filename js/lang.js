@@ -23,7 +23,7 @@ const translations = {
 
         aboutTitle: "AI-enhanced, natural language text conversion, get to know the author"
     },
-    cn: {
+    zh: {
         indexTitle: "AI驱动，自然语言为输入，激发文本转换生产效率。",
         home: "首页",
         about: "关于",

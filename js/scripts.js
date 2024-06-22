@@ -87,15 +87,14 @@ commentButton.addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', () => {
     const langSwitchButton = document.getElementById('langSwitch');
     const iframe = document.querySelector('iframe[name="content-frame"]');
-    let currentLang = localStorage.getItem('lang') || 'cn'; 
+    let currentLang = localStorage.getItem('lang') || navigator.language.slice(0, 2) || 'zh'; 
     applyTranslations(currentLang);
 
     langSwitchButton.addEventListener('click', () => {
-        currentLang = currentLang === 'cn' ? 'en' : 'cn';
+        currentLang = currentLang === 'zh' ? 'en' : 'zh';
         localStorage.setItem('lang', currentLang);
         applyTranslations(currentLang);
         iframe.contentWindow.postMessage({ lang: currentLang }, '*');
-        /*langSwitchButton.textContent = currentLang === 'cn' ? 'EN' : '中文';*/
     });
 
     function applyTranslations(lang) {

@@ -34,7 +34,7 @@ function applyTranslations(lang) {
 // documentLoadedInitLanguageListener
 function documentLoadedInitLanguageListener() {
     document.addEventListener('DOMContentLoaded', () => {
-        let currentLang = localStorage.getItem('lang') || navigator.language.slice(0, 2) || 'cn'; 
+        let currentLang = localStorage.getItem('lang') || navigator.language.slice(0, 2) || 'zh'; 
         applyTranslations(currentLang);
     });
 }
