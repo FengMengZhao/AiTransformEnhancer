@@ -11,6 +11,7 @@ var swapButton = document.getElementById('swapButton');
 var outputArea = document.getElementById('outputArea');
 var copyButton = document.getElementById('copyButton');
 var clearButton = document.getElementById('clearButton');
+var commentButton = document.getElementById('commentButton');
 
 
 // 按下Enter键时触发processButton点击事件
@@ -88,7 +89,32 @@ if(githubButton){
     });
 }
 
+let issoLoaded = false;
 
+if(commentButton){
+commentButton.addEventListener('click', function() {
+	const commentSection = parent.document.getElementById('comment');
+
+	if(commentSection) {
+		if (commentSection.style.display === 'none' || commentSection.style.display === '') {
+		    // 显示评论区域
+		    commentSection.style.display = 'block';
+
+		    // 动态加载 Isso 脚本（只加载一次）
+		    if (!issoLoaded) {
+			var issoScript = parent.document.createElement('script');
+			issoScript.src = "//comment.ai-reading.me/js/embed.min.js";
+			issoScript.dataset.isso = "//comment.ai-reading.me";
+			parent.document.body.appendChild(issoScript);
+			issoLoaded = true;
+		    }
+		} else {
+		    // 隐藏评论区域
+		    commentSection.style.display = 'none';
+		}
+	}
+	});
+}
 
 
 if (processButton) {
