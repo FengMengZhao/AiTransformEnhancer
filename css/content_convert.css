@@ -1,0 +1,54 @@
+/* 引用公共样式 */
+@import url('common.css');
+
+/* content_convert 特定样式 */
+.editor-container {
+    flex-direction: row;
+}
+
+.editor {
+    height: auto; /* 高度自动调整 */
+}
+
+.buttons {
+    flex-direction: column; /* 按钮竖向排列 */
+    justify-content: center; /*space-evenly;*/
+    gap: 10px;
+    padding: 10px 0; /* 增加内边距 */
+}
+
+.buttons .layui-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.transformation {
+    height: auto; /* 高度自动调整 */
+}
+
+.transformation .layui-input {
+    width: calc(100% - 55px); /* 调整输入框宽度 */
+}
+
+.search-button {
+    margin-left: 10px; /* 增加左边距 */
+}
+
+#langSwitch {
+    color: black; /* 设置按钮颜色 */
+    font-weight: bold; /* 设置按钮字体加粗 */
+    border: none; /* 移除下划线 */
+    position: static; /* 设置相对定位 */
+    width: auto; /* 设置宽度自动 */
+    height: auto; /* 设置高度自动 */
+}
+
+
+.editor textarea {
+    flex: 1; /* 使用flex-grow属性 */
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    padding: 5px;
+}

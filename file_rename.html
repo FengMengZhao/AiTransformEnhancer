@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title data-translate="fileRenameTitle">AI驱动，自然语言为输入，激发文件重命名生产效率。</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.min.css">
+    <link rel="stylesheet" href="css/file_rename.css">
+    <script src="js/file_rename-lang.js"></script>
+</head>
+<body>
+
+<!-- 转换规则输入区域 -->
+<div class="transformation">
+    <input type="text" id="transformationRule" class="layui-input" placeholder="AI驱动，自然语言转换文件名称（例如：添加日期前缀）" data-translate="transformationPlaceholder">
+    <button id="searchButton" class="search-button layui-btn layui-btn-normal layui-icon layui-icon-search" title="提问" data-translate="ask"></button>
+</div>
+
+<div class="editor-container-parent">
+    <!-- 编辑区域 -->
+    <div class="editor-container">
+        <!-- 左侧输入区域 -->
+        <div class="editor">
+            <button type="button" class="layui-btn" id="fileInputButton">
+                <i class="layui-icon">&#xe67c;</i> 上传文件
+            </button>
+            <ul id="fileList" class="file-list"></ul>
+        </div>
+
+        <!-- 按钮区域 -->
+        <div class="buttons">
+            <button id="processButton" class="layui-btn layui-btn-normal layui-icon layui-icon-transfer" title="转换" data-translate="process"></button>
+            <button id="downloadButton" class="layui-btn layui-btn-primary layui-icon layui-icon-download-circle" title="下载" data-translate="download"></button>
+            <button id="clearButton" class="layui-btn layui-btn-danger layui-icon layui-icon-delete" title="清除" data-translate="clear"></button>
+        </div>
+
+        <!-- 右侧输出区域 -->
+        <div class="editor">
+            <ul id="outputList" class="file-list"></ul>
+        </div>
+    </div>
+</div>
+
+<script src="jszip/3.7.1/jszip.min.js"></script>
+<script src="layui/layui.min.js"></script>
+<script src="js/file_rename.js" type="module"></script>
+
+</body>
+</html>

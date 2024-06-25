@@ -1,0 +1,116 @@
+/* 引用公共样式 */
+@import url('common.css');
+
+.file-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-list li {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-attribute {
+    margin: 5px 0;
+}
+
+.file-attribute span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.file-name {
+    font-weight: bold; /* 文件名称加粗 */
+    font-size: 16px; /* 增加字体大小 */
+}
+
+.file-size, .file-type, .file-last-modified {
+    color: gray; /* 其他属性使用灰色 */
+    font-size: 14px; /* 其他属性字体大小 */
+}
+
+.editor {
+    border: 1px solid #ddd; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+    background-color: #fff; /* 背景色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 阴影 */
+    overflow-y: auto; /* 当内容过多时出现滚动条 */
+}
+
+.editor-container-parent {
+    padding: 0 10px; /* 内边距 */
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.editor-container {
+    height: 100%;
+}
+
+.buttons {
+    margin: 10px;
+}
+
+.editor-container {
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .editor-container {
+        flex-direction: column; /* 切换为纵向排列 */
+        height: auto; /* 高度自动调整 */
+    }
+
+    .editor {
+        height: auto; /* 高度自动调整 */
+    }
+
+    .buttons {
+        flex-direction: row; /* 按钮横向排列 */
+        justify-content: space-evenly;
+        gap: 5px;
+        padding: 10px 0; /* 增加内边距 */
+    }
+
+    .buttons .layui-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .transformation {
+        height: auto; /* 高度自动调整 */
+    }
+
+    .transformation .layui-input {
+        width: calc(100% - 55px); /* 调整输入框宽度 */
+    }
+
+    .search-button {
+        margin-left: 10px; /* 增加左边距 */
+    }
+
+    #langSwitch {
+        color: black; /* 设置按钮颜色 */
+        font-weight: bold; /* 设置按钮字体加粗 */
+        border: none; /* 移除下划线 */
+        position: static; /* 设置相对定位 */
+        width: auto; /* 设置宽度自动 */
+        height: auto; /* 设置高度自动 */
+    }
+}
+
+/* 美化文件上传按钮 */
+#fileInputButton {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
