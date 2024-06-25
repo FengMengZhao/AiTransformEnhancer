@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // 将每个选择的文件存储到files数组中
                 obj.preview(function(index, file, result) {
                     files.push(file);
+			fileMap.set(file.name, file);
                     // displayFiles(files, fileList);
                     displayFileAttributes(file);
                 });
@@ -82,15 +83,15 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // 封装文件属性成 JSON array
         const fileAttributes = files.map(file => ({
-            name: file.name,
-            size: file.size,
-            type: file.type,
-            lastModifyTime: new Date(file.lastModified).toLocaleString()
+            fileName: file.name,
+            fileSize: file.size,
+            fileType: file.type,
+            fileLastModifyDate: new Date(file.lastModified).toLocaleString()
         }));
 
         try {
             // 发起 fetch 请求
-            const response = await fetch('/api/txt_transform/file_rename', {
+            const response = await fetch('/test-api/txt_transform/file_rename', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -98,7 +99,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 body: JSON.stringify({ rule, files: fileAttributes })
             });
 
-            const renamedData = await response.data.json();
+		// 检查响应状态
+        if (!response.ok) {
+            throw new Error('Network response was not ok' + response.statusText);
+        }
+
+        // 解析响应体为 JSON
+        const renamedRes = await response.json();
+        console.log('Renamed Result:', renamedRes);
+	const renamedData = renamedRes.data;
 
             // 通过映射关系重命名文件
             renamedFiles = Object.keys(renamedData).map(oldFileName => {
