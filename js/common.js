@@ -172,6 +172,27 @@ function handleProcessButtonClick({
         });
 }
 
+// 公共函数：为元素添加Enter键监听器
+function addEnterKeyListener(inputElement, buttonElement) {
+    if (inputElement) {
+        inputElement.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // 防止默认的Enter键行为
+                if (!buttonElement.disabled) {
+                    buttonElement.click();
+                }
+            }
+        });
+    }
+}
 
+// 公共函数：为元素添加点击监听器
+function addClickListener(clickElement, buttonElement) {
+    if (clickElement) {
+        clickElement.addEventListener('click', function() {
+            buttonElement.click();
+        });
+    }
+}
 
-export { initLanguageListener, documentLoadedInitLanguageListener, formatFileSize, handleProcessButtonClick };
+export { initLanguageListener, documentLoadedInitLanguageListener, formatFileSize, handleProcessButtonClick, addEnterKeyListener, addClickListener};

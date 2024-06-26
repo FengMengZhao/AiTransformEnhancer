@@ -1,8 +1,9 @@
-import { documentLoadedInitLanguageListener, initLanguageListener, formatFileSize, handleProcessButtonClick } from "./common.js";
+import { documentLoadedInitLanguageListener, initLanguageListener, formatFileSize, handleProcessButtonClick, addEnterKeyListener, addClickListener } from "./common.js";
 
 documentLoadedInitLanguageListener();
 
 initLanguageListener();
+
 
 const ruleInput =  document.getElementById("transformationRule")
 const fileList = document.getElementById("fileList");
@@ -11,6 +12,11 @@ const processButton = document.getElementById("processButton");
 const searchButton = document.getElementById("searchButton");
 const downloadButton = document.getElementById("downloadButton");
 const clearButton = document.getElementById("clearButton");
+
+
+// 调用公共函数
+addEnterKeyListener(ruleInput, processButton);
+addClickListener(searchButton, processButton);
 
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化layui上传组件
@@ -98,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function processFiles() {
         // for test sleep 5 seconds
-        //await new Promise(resolve => setTimeout(resolve, 3000));
+        await new Promise(resolve => setTimeout(resolve, 3000));
         const rule = ruleInput.value;
         
         // 封装文件属性成 JSON array
@@ -159,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 link.download = "renamed_files.zip";
                 link.click();
             });
-	    clearFiles();
+        
     }
 
     function clearFiles() {
