@@ -274,3 +274,55 @@ function processText(text, rule) {
         document.getElementById('outputArea').value = '';
     });
 }
+
+
+const autoFormatButton = document.getElementById("autoFormatButton");
+
+if(autoFormatButton) {
+    autoFormatButton.addEventListener("click", function() {
+        const code = inputArea.value.trim();
+        //if code empty
+        if (code === '') {
+            layui.layer.msg('请输入代码', {icon: 2, time: 2000, offset: 'rt'});
+            // intput border color red
+            inputArea.style.borderColor = 'red';
+            return;
+        }
+
+        // 使用 highlight.js 自动检测语言
+        const detectedLanguage = hljs.highlightAuto(code).language;
+        layui.layer.msg(`Detected Language: ${detectedLanguage}`, {icon: 1, time: 2000, offset: 'rt'});
+
+        let formattedCode = '';
+        try {
+            switch (detectedLanguage) {
+                case 'json':
+                    formattedCode = js_beautify(code, { indent_size: 4 });
+                    break;
+                case 'sql':
+                    formattedCode = sqlFormatter.format(code);
+                    break;
+                case 'java':
+                case 'javascript':
+                    formattedCode = js_beautify(code, { indent_size: 4 });
+                    break;
+                case 'python':
+                    formattedCode = js_beautify(code, { indent_size: 4 });
+                    break;
+                case 'html':
+                    formattedCode = html_beautify(code, { indent_size: 4 });
+                    break;
+                case 'css':
+                    formattedCode = css_beautify(code, { indent_size: 4 });
+                    break;
+                // 可以添加更多语言的格式化逻辑
+                default:
+                    layui.layer.msg('Unsupported or undetected language', {icon: 2, time: 2000, offset: 'rt'});
+                    return;
+            }
+            outputArea.value = formattedCode;
+        } catch (error) {
+            layui.layer.msg('Error formatting code', {icon: 2, time: 2000, offset: 'rt'});
+        }
+    });
+}
