@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // 将每个选择的文件存储到files数组中
                 obj.preview(function(index, file, result) {
                 fileList.files.push(file);
+                files.push(file);
 			    fileMap.set(file.name, file);
                     // displayFiles(files, fileList);
                     displayFileAttributes(file);
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    let files = fileList.files || [];
+    let files = [];
     let renamedFiles = [];
     let fileMap = new Map();
 
@@ -172,6 +173,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function clearFiles() {
         files = [];
+        fileList.files = [];
+        fileMap.clear();
         renamedFiles = [];
         fileList.innerHTML = "";
         outputList.innerHTML = "";
