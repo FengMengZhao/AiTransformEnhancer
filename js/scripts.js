@@ -17,6 +17,9 @@ layui.use('element', function(){
 });
 
 
+let issoLoaded = false;
+
+
 // 获取元素
 var toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
 var sidebar = document.getElementById('sidebar');

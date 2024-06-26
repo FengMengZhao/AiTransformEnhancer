@@ -102,11 +102,11 @@ commentButton.addEventListener('click', function() {
 
 		    // 动态加载 Isso 脚本（只加载一次）
 		    if (!issoLoaded) {
-			var issoScript = parent.document.createElement('script');
-			issoScript.src = "//comment.ai-reading.me/js/embed.min.js";
-			issoScript.dataset.isso = "//comment.ai-reading.me";
-			parent.document.body.appendChild(issoScript);
-			issoLoaded = true;
+                var issoScript = parent.document.createElement('script');
+                issoScript.src = "//comment.ai-reading.me/js/embed.min.js";
+                issoScript.dataset.isso = "//comment.ai-reading.me";
+                parent.document.body.appendChild(issoScript);
+                issoLoaded = true;
 		    }
 		} else {
 		    // 隐藏评论区域

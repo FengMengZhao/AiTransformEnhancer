@@ -1,4 +1,4 @@
-import { documentLoadedInitLanguageListener, initLanguageListener, formatFileSize, handleProcessButtonClick, addEnterKeyListener, addClickListener } from "./common.js";
+import { documentLoadedInitLanguageListener, initLanguageListener, formatFileSize, handleProcessButtonClick, addEnterKeyListener, addClickListener, addCommentEventListener } from "./common.js";
 
 documentLoadedInitLanguageListener();
 
@@ -12,11 +12,13 @@ const processButton = document.getElementById("processButton");
 const searchButton = document.getElementById("searchButton");
 const downloadButton = document.getElementById("downloadButton");
 const clearButton = document.getElementById("clearButton");
+const commentButton = document.getElementById("commentButton");
 
 
 // 调用公共函数
 addEnterKeyListener(ruleInput, processButton);
 addClickListener(searchButton, processButton);
+addCommentEventListener(commentButton);
 
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化layui上传组件

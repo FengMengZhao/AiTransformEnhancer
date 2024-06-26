@@ -195,4 +195,39 @@ function addClickListener(clickElement, buttonElement) {
     }
 }
 
-export { initLanguageListener, documentLoadedInitLanguageListener, formatFileSize, handleProcessButtonClick, addEnterKeyListener, addClickListener};
+
+
+function addCommentEventListener(commentButton) {
+    if (commentButton) {
+        commentButton.addEventListener('click', function toggleCommentSection() {
+            const commentSection = parent.document.getElementById('comment');
+        
+            if (commentSection) {
+                if (commentSection.style.display === 'none' || commentSection.style.display === '') {
+                    // 显示评论区域
+                    commentSection.style.display = 'block';
+                    
+                    //get parent issoLoad
+                    let issoLoaded = parent.issoLoaded;
+                    if (issoLoaded === undefined) {
+                        issoLoaded = false;
+                    }
+                    // 动态加载 Isso 脚本（只加载一次）
+                    if (!issoLoaded) {
+                        const issoScript = parent.document.createElement('script');
+                        issoScript.src = "//comment.ai-reading.me/js/embed.min.js";
+                        issoScript.dataset.isso = "//comment.ai-reading.me";
+                        parent.document.body.appendChild(issoScript);
+                        issoLoaded = true;
+                        parent.issoLoaded = issoLoaded;
+                    }
+                } else {
+                    // 隐藏评论区域
+                    commentSection.style.display = 'none';
+                }
+            }
+        });
+    }
+}
+
+export { initLanguageListener, documentLoadedInitLanguageListener, formatFileSize, handleProcessButtonClick, addEnterKeyListener, addClickListener, addCommentEventListener};
