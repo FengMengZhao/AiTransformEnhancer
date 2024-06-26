@@ -24,7 +24,7 @@
 }
 
 .transformation {
-    height: auto; /* 高度自动调整 */
+    /*height: auto;*/ /* 高度自动调整 */
 }
 
 .transformation .layui-input {
