@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function processFiles() {
         // for test sleep 5 seconds
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        //await new Promise(resolve => setTimeout(resolve, 3000));
         const rule = ruleInput.value;
         
         // 封装文件属性成 JSON array
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         try {
             // 发起 fetch 请求
-            const response = await fetch('/test-api/txt_transform/file_rename', {
+            const response = await fetch('/api/txt_transform/file_rename', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
