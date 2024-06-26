@@ -1,14 +1,22 @@
-import { documentLoadedInitLanguageListener, initLanguageListener, formatFileSize } from "./common.js";
+import { documentLoadedInitLanguageListener, initLanguageListener, formatFileSize, handleProcessButtonClick } from "./common.js";
 
 documentLoadedInitLanguageListener();
 
 initLanguageListener();
 
+const ruleInput =  document.getElementById("transformationRule")
+const fileList = document.getElementById("fileList");
+const outputList = document.getElementById("outputList");
+const processButton = document.getElementById("processButton");
+const searchButton = document.getElementById("searchButton");
+const downloadButton = document.getElementById("downloadButton");
+const clearButton = document.getElementById("clearButton");
+
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化layui上传组件
     layui.use(['upload'], function() {
         var upload = layui.upload;
-
+        fileList.files = [];
         // 多文件列表示例
         upload.render({
             elem: '#fileInputButton',
@@ -18,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
             choose: function(obj) {
                 // 将每个选择的文件存储到files数组中
                 obj.preview(function(index, file, result) {
-                    files.push(file);
-			fileMap.set(file.name, file);
+                fileList.files.push(file);
+			    fileMap.set(file.name, file);
                     // displayFiles(files, fileList);
                     displayFileAttributes(file);
                 });
@@ -27,19 +35,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    const fileList = document.getElementById("fileList");
-    const outputList = document.getElementById("outputList");
-    const processButton = document.getElementById("processButton");
-    const downloadButton = document.getElementById("downloadButton");
-    const clearButton = document.getElementById("clearButton");
+    let files = fileList.files || [];
+    let renamedFiles = [];
+    let fileMap = new Map();
 
-    processButton.addEventListener("click", processFiles);
+
+    //processButton.addEventListener("click", processFiles);
     downloadButton.addEventListener("click", downloadFiles);
     clearButton.addEventListener("click", clearFiles);
 
-    let files = [];
-    let renamedFiles = [];
-    let fileMap = new Map();
+    if (processButton) {
+        processButton.addEventListener('click', function() { 
+            handleProcessButtonClick({
+                ruleInput: ruleInput,
+                fileInput: fileList,
+                processButton: processButton,
+                searchButton: searchButton,
+                processFunction: processFiles,
+                inputType: 'file'
+            });
+        });
+    }
+
+
 
     function displayFiles(files, listElement) {
         listElement.innerHTML = "";
@@ -79,7 +97,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     async function processFiles() {
-        const rule = document.getElementById("transformationRule").value;
+        // for test sleep 5 seconds
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        const rule = ruleInput.value;
         
         // 封装文件属性成 JSON array
         const fileAttributes = files.map(file => ({
@@ -99,15 +119,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 body: JSON.stringify({ rule, files: fileAttributes })
             });
 
-		// 检查响应状态
-        if (!response.ok) {
-            throw new Error('Network response was not ok' + response.statusText);
-        }
+            // 检查响应状态
+            if (!response.ok) {
+                throw new Error('Network response was not ok, ' + response.statusText);
+            }
 
-        // 解析响应体为 JSON
-        const renamedRes = await response.json();
-        console.log('Renamed Result:', renamedRes);
-	const renamedData = renamedRes.data;
+            // 解析响应体为 JSON
+            const renamedRes = await response.json();
+            console.log('Renamed Result:', renamedRes);
+            const renamedData = renamedRes.data;
 
             // 通过映射关系重命名文件
             renamedFiles = Object.keys(renamedData).map(oldFileName => {
@@ -117,8 +137,10 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             displayFiles(renamedFiles, outputList);
+            layui.layer.msg(renamedRes.msg, {icon: renamedRes.success ? 1 : 2, offset: 'rt'});
         } catch (error) {
             console.error('Error during fetch:', error);
+            layui.layer.msg(error.message, {icon: 2, offset: 'rt'});
         }
     }
 
