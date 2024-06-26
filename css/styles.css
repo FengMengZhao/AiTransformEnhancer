@@ -190,6 +190,16 @@ body {
     padding: 0; /* 移除默认内边距 */
 }
 
+.new-badge {
+    color: red;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 12px;
+    margin-left: 5px;
+    display: inline-block; /* 确保<span>在同一行 */
+    vertical-align: middle; /* 对齐方式 */
+}
 
 
 /* 响应式设计 */

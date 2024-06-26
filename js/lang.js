@@ -9,6 +9,7 @@ const translations = {
         langSwitch: "EN",
         resume: "Resume",
         commentBoard: "Comment Board",
+        new: "New",
 
         contentConvertTitle: "AI-driven, natural language input to boost productivity in text conversion. I am your AI text conversion friend. Just tell me what to do, and I'll get it done for you. No need for regular expressions, just ask in natural language.",
         transformationPlaceholder: "AI-driven, natural language text conversion (e.g., add serial number at the beginning of the line)",
@@ -34,6 +35,7 @@ const translations = {
         langSwitch: "中文",
         resume: "简历",
         commentBoard: "留言板",
+        new: "新",
 
         contentConvertTitle: "AI驱动，自然语言为输入，激发文本转换生产效率。我是你的AI文本转换朋友，你只要告诉我做什么，我帮你做好，不需要正则表达式，用自然语言求助。",
         transformationPlaceholder: "AI驱动，自然语言转换文本（例如：行首加序号）",
