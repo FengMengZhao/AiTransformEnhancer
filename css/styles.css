@@ -81,6 +81,7 @@ body {
 
 .sidebar .layui-nav-child a {
     color: black; /* 二级链接颜色 */
+    display: inline;
 }
 
 .content {
@@ -200,7 +201,6 @@ body {
     display: inline-block; /* 确保<span>在同一行 */
     vertical-align: middle; /* 对齐方式 */
 }
-
 
 /* 响应式设计 */
 @media (max-width: 768px) {
@@ -326,6 +326,14 @@ body {
         width: auto; /* 设置宽度自动 */
         height: auto; /* 设置高度自动 */
 
+    }
+
+    .sidebar .layui-nav-child a {
+        display: block;
+    }
+
+    .new-badge {
+        display: none;
     }
 
 }
