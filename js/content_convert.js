@@ -171,7 +171,7 @@ if (processButton) {
         processButton.disabled = true;
         searchButton.disabled = true;
         //继续处理
-        document.getElementById('outputArea').value = '转换中，请稍等...';
+        document.getElementById('outputArea').value = 'Converting, please wait...';
 
         // 保存原始图标
         const originalIcon = processButton.innerHTML;
