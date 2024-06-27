@@ -24,7 +24,7 @@
 
 ### 功能二、文件重命名
 
-
+![file-rename.gif](https://ai-reading.me/image/ai-exchange-file-rename.gif)
 
 ## 功能一、文本转换
 
