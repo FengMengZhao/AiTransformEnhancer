@@ -1,4 +1,4 @@
-# Ai Exchange
+# AI. Transform Enhancer
 
 > 代码仅包含前端部分。
 
@@ -6,7 +6,7 @@
 
 本项目旨在通过大模型和AI技术，将自然语言转换为编程语言指令，使得非专业用户可以轻松进行文本转换和处理。
 
-体验地址：[Ai-Exchange](https://ai-reading.me)，PC、手机端均适配
+体验地址：[AI. Transform Enhancer](https://ai-reading.me)，PC、手机端均适配
 
 > 项目开发中，上线部分功能
 
@@ -266,4 +266,4 @@ d******1.txt
 i******1.png
 ```
 
-**更多有群的玩法，访问[Ai-Exchange](https://www.ai-reading.me)体验**
+**更多有群的玩法，访问[AI. Transform Enhancer](https://www.ai-reading.me)体验**
