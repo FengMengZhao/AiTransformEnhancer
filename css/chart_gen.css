@@ -112,6 +112,11 @@
 
     #staticImage {
         margin-top: 0;
-        margin-left: 0;
+        /*margin-left: 0;*/
+    }
+
+    #dynamicImage {
+        margin-top: 0;
+        /*margin-left: 0;*/
     }
 }
