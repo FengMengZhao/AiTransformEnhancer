@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // 显示动态图像，隐藏静态图像
         dynamicImage.style.display = 'block';
         staticImage.style.display = 'none';
-	clearChartInstances();
+	    clearChartInstances();
 	
 
         // for test sleep 5 seconds
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const rule = ruleInput.value;
         try {
             // 发起 fetch 请求
-            const response = await fetch('/api-test/img_transform/chart_gen', {
+            const response = await fetch('/api/img_transform/chart_gen', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
