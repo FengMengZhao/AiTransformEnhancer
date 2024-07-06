@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // 显示动态图像，隐藏静态图像
         dynamicImage.style.display = 'block';
         staticImage.style.display = 'none';
+	clearChartInstances();
+	
 
         // for test sleep 5 seconds
         //await new Promise(resolve => setTimeout(resolve, 3000));
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const rule = ruleInput.value;
         try {
             // 发起 fetch 请求
-            const response = await fetch('/api-test/txt_transform/char_gen', {
+            const response = await fetch('/api-test/img_transform/chart_gen', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // 解析响应体为 JSON
             const chartConfigData = await response.json();
             console.log('Renamed Result:', chartConfigData);
-            const chartConfigs = chartConfigData.data;
+            const chartConfigs = JSON.parse(chartConfigData.data);
   /*          const chartConfigs = [
                 {
                     "type": "bar",
@@ -198,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
             chartConfigs.forEach((config, index) => {
                 // 创建容器
                 const chartWrapper = document.createElement('div');
-                chartWrapper.style.marginBottom = '60px'; // 设置不同 chart 之间的初始上下间距
+                chartWrapper.style.marginBottom = '40px'; // 设置不同 chart 之间的初始上下间距
                 chartWrapper.style.position = 'relative'; // 相对定位，用于放大缩小
                 chartWrapper.style.zIndex = '1'; // 设置初始层级
             
@@ -223,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 };
             
                 // 复制按钮
-                const copyButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-file', '复制', () => {
+                const copyButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-file', 'Copy', () => {
                     const imgURL = canvas.toDataURL();
                     const tempInput = document.createElement('input');
                     document.body.appendChild(tempInput);
@@ -237,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 buttonWrapper.appendChild(copyButton);
             
                 // 下载按钮
-                const downloadButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-download-circle', '下载', () => {
+                const downloadButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-download-circle', 'Download', () => {
                     const link = document.createElement('a');
                     link.href = canvas.toDataURL();
                     link.download = `chart${index}.png`;
@@ -246,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 buttonWrapper.appendChild(downloadButton);
             
                 // 放大按钮
-                const zoomInButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-add-circle', '放大', () => {
+                const zoomInButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-add-circle', 'Enlarge', () => {
                     recreateChart(index, 1.2);
                     zoomInButton.disabled = true;
                     zoomInButton.classList.add('layui-btn-disabled');
@@ -256,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 buttonWrapper.appendChild(zoomInButton);
             
                 // 缩小按钮
-                const zoomOutButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-reduce-circle', '缩小', () => {
+                const zoomOutButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-reduce-circle', 'Reduce', () => {
                     recreateChart(index, 0.8);
                     zoomOutButton.disabled = true;
                     zoomOutButton.classList.add('layui-btn-disabled');
@@ -266,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 buttonWrapper.appendChild(zoomOutButton);
             
                 // 恢复初始比例按钮
-                const resetButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-refresh', '恢复初始比例', () => {
+                const resetButton = createButton('layui-btn layui-btn-primary layui-icon layui-icon-refresh', 'Reset', () => {
                     recreateChart(index, 1.0, true);
                     zoomInButton.disabled = false;
                     zoomInButton.classList.remove('layui-btn-disabled');
@@ -387,11 +389,17 @@ document.addEventListener("DOMContentLoaded", function() {
         ruleInput.value = '';
         chartContainer.innerHTML = '';
         staticImage.style.display = 'block';
-        // clear chartInstances
-        chartInstances.forEach(chart => chart.destroy());
-        // empty chartInstances
-        chartInstances.length = 0;
+	clearChartInstances();
     }
+
+   function clearChartInstances() {
+	if(chartInstances.length > 0) {
+		// clear chartInstances
+		chartInstances.forEach(chart => chart.destroy());
+		// empty chartInstances
+		chartInstances.length = 0;
+	}
+   }
 
 
     downloadButton.addEventListener('click', () => {
