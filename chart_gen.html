@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title data-translate="charGenTitle">AI驱动，图表生成生产效率。我是你的AI图表生成朋友，你只要告诉我做什么，我帮你生成图表。</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="layui/css/layui.min.css">
+    <!--<link href="//unpkg.com/layui@2.9.11/dist/css/layui.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/chart_gen.css">
+    <script src="js/chart_gen-lang.js"></script>
+    <script type="text/javascript" src="//api.tongjiniao.com/c?_=660800102115094528" async></script>
+    <script src="chart/chart.js"></script>
+</head>
+<body>
+
+<!-- 转换规则输入区域 -->
+<div class="transformation">
+    <input type="text" id="transformationRule" class="layui-input" placeholder="AI驱动，自然语言生成图表（例如：生成饼图||为空AI帮你自动生成）" data-translate="chartGentransformationPlaceholder">
+    <button id="searchButton" class="search-button layui-btn layui-btn-normal layui-icon layui-icon-search" title="提问" data-translate="ask"></button>
+</div>
+
+<div class="editor-container-parent">
+    <!-- 编辑区域 -->
+    <div class="editor-container">
+        <!-- 左侧输入区域 -->
+        <div class="editor">
+            <textarea id="inputArea" placeholder="输入..." data-translate="inputPlaceholder"></textarea>
+        </div>
+
+        <!-- 按钮区域 -->
+        <div class="buttons">
+            <button id="processButton" class="layui-btn layui-btn-normal layui-icon layui-icon-transfer" title="生成图表" data-translate="process"></button>
+            <button id="downloadButton" class="layui-btn layui-btn-primary layui-icon layui-icon-download-circle" title="下载" data-translate="download"></button>
+            <button id="clearButton" class="layui-btn layui-btn-danger layui-icon layui-icon-delete" title="清除" data-translate="clear"></button>
+            <button id="commentButton" class="layui-btn layui-icon layui-icon-reply-fill" title="留言" data-translate="comment"></button>
+        </div>
+
+        <!-- 右侧输出区域 -->
+        <div class="editor">
+            <div id="outputArea">
+                <img id="staticImage" src="image/Wedges-100.0s.svg" alt="静态图表占位符">
+                <img id="dynamicImage" src="image/Wedges-3.0s.svg" alt="动态图表占位符" style="display: none;">
+                <div id="chartContainer" style="display: none;"></div>
+            </div>
+            <!-- 动态生成的HTML将插入到这里 -->
+        </div>
+    </div>
+</div>
+
+
+<script src="filesaver/FileSaver.min.js"></script>
+<script src="jszip/3.7.1/jszip.min.js"></script>
+<script src="layui/layui.min.js"></script>
+<script src="js/chart_gen.js" type="module"></script>
+</body>
+</html>

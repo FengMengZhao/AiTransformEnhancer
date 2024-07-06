@@ -60,7 +60,8 @@ function handleProcessButtonClick({
     processButton,
     searchButton,
     processFunction,
-    inputType // 'text' 或 'file'
+    inputType, // 'text' 或 'file'
+    allowEmptyRule = false
 }) {
     var ruleValue = ruleInput.value.trim();
     var inputText = textInput ? textInput.value.trim() : null;
@@ -76,7 +77,7 @@ function handleProcessButtonClick({
     ruleInput.style.borderColor = ''; // 重置边框颜色
 
     // 校验规则输入框
-    if (ruleValue === '') {
+    if (!allowEmptyRule && ruleValue === '') {
         ruleErrorTextContent = '规则不能为空';
         ifRule = true;
     } else if (ruleValue.length > 50) {
@@ -126,8 +127,14 @@ function handleProcessButtonClick({
 
     // 校验通过，禁用输入框和按钮
     ruleInput.disabled = true;
-    if (textInput) textInput.disabled = true;
-    if (fileInput) fileInput.disabled = true;
+    if (textInput) {
+        textInput.disabled = true;
+        textInput.style.borderColor = '';
+    }
+    if (fileInput) {
+        fileInput.disabled = true;
+        fileInput.parentElement.style.borderColor = '';
+    } 
     processButton.disabled = true;
     searchButton.disabled = true;
 

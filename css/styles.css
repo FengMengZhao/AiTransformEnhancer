@@ -62,7 +62,7 @@ body {
 
 .sidebar {
     width: 200px;
-    background-color: cadetblue;
+    background-color: #16baaa; /*cadetblue;*/
     padding: 0;
     box-sizing: border-box;
     margin-top: 10px;
