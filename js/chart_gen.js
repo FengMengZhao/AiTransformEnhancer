@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // 解析响应体为 JSON
             const chartConfigData = await response.json();
             console.log('Renamed Result:', chartConfigData);
-            const chartConfigs = chartConfigData.data;
+            const chartConfigs = JSON.parse(chartConfigData.data);
   /*          const chartConfigs = [
                 {
                     "type": "bar",
