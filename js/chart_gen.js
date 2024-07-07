@@ -81,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
             // 解析响应体为 JSON
             const chartConfigData = await response.json();
             console.log('Renamed Result:', chartConfigData);
+            // if chartConfigData success false, layui error message
+            if (chartConfigData.success === false) {
+                // throw new Error message
+                throw new Error(chartConfigData.message);
+            }
             const chartConfigs = JSON.parse(chartConfigData.data);
   /*          const chartConfigs = [
                 {

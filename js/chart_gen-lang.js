@@ -7,7 +7,7 @@ const translations = {
         download: "Download",
         clear: "Clear",
         comment: "Comment",
-        inputPlaceholder: "Input..."
+        chartGeninputPlaceholder:  "Input the text content that can extract data..."
     },
     zh: {
         charGenTitle: "AI驱动，图表生成生产效率。我是你的AI图表生成朋友，你只要告诉我做什么，我帮你生成图表。",
@@ -17,6 +17,6 @@ const translations = {
         download: "下载",
         clear: "清除",
         comment: "留言",
-        inputPlaceholder: "输入..."
+        chartGeninputPlaceholder: "输入可提取数据的文本内容..."
     }
 };
