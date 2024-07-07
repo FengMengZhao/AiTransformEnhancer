@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // if chartConfigData success false, layui error message
             if (chartConfigData.success === false) {
                 // throw new Error message
-                throw new Error(chartConfigData.message);
+                throw new Error(chartConfigData.msg);
             }
             const chartConfigs = JSON.parse(chartConfigData.data);
   /*          const chartConfigs = [
