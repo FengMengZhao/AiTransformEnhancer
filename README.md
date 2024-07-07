@@ -28,7 +28,7 @@
 
 ### 功能三、Chart生成
 
-![chart_gen.gif](https://ai-reading.me/image/Ai-Transfor-Enhancer-chart_gen.gif)
+![chart_gen.gif](image/Ai-Transfor-Enhancer-chart_gen.gif)
 
 ## 功能一、文本转换
 
