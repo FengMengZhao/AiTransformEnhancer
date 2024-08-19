@@ -4,7 +4,7 @@
 
 ## 新版本、新体验
 
-![首页](images/vue-home-page.png)
+![首页](image/vue-home-page.png)
 
 ## 项目介绍
 
