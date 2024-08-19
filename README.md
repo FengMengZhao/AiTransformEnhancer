@@ -4,8 +4,7 @@
 
 ## 新版本、新体验
 
-![Uploading 屏幕截图 2024-08-19 112444.png…]()
-
+![首页](images/vue-home-page.png)
 
 ## 项目介绍
 
