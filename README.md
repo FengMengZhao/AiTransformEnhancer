@@ -1,6 +1,11 @@
-# AI. Transform Enhancer
+# AI. Transform Box（原AI. Transform Enhancer）
 
-> 代码仅包含前端部分。
+> 代码仅包含前端部分。（前端使用vue重新实现uTools插件和web端，此项目代码不再更新）
+
+## 新版本、新体验
+
+![Uploading 屏幕截图 2024-08-19 112444.png…]()
+
 
 ## 项目介绍
 
